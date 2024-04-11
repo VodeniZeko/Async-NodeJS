@@ -2,12 +2,19 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
-//const logger = require('morgan');
-//const cookieParser = require('cookie-parser');
+const DataMonitor = require("./DataMonitor");
 const debug = require("debug")("app");
+
+
 const PORT = 3000;
 
-const clothing = require('./server/routes/clothing');
+
+const dataMonitor = new DataMonitor();
+dataMonitor.on('dataAded', (item) => {
+  console.log('Data added: ' + item);
+});
+
+const clothing = require('./server/routes/clothing')(dataMonitor);
 const errors = require('./server/routes/errors');
 
 const app = express();
