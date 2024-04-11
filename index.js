@@ -11,6 +11,11 @@ const PORT = 3000;
 
 const dataMonitor = new DataMonitor();
 dataMonitor.on('dataAded', (item) => {
+
+  //setImmediate makes the event emitter async
+  // setImmediate(() => {
+  //   console.log('Data added: ' + item);
+  // })
   console.log('Data added: ' + item);
 });
 
