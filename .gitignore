@@ -1,0 +1,35 @@
+# Dependency directories
+/node_modules
+
+# Environment variables file
+.env
+
+# Compiled output
+/dist
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs
+npm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+*.swn
+*.swm
+
+# Ignore local environment config
+.env.local
+
+# Ignore config.js file
+config.js
+
+# Ignore node package manager files
+npm-debug.log*
+yarn-error.log*
